@@ -22,9 +22,18 @@ class LinkedList{
         }
         head.next = temp;
     }
+    void print(){
+        LinkedList data = this;
+        while(data!=null){
+            System.out.print(data.data+" ");
+            data = data.next;
+        }
+        System.out.print("\n");
+    }
+
 }
-class reverse_linkedList {
-    public LinkedList reverseList(LinkedList head) {
+class Solution {
+    LinkedList reverseList(LinkedList head) {
         LinkedList current = head;
         LinkedList next = head;
         LinkedList temp = null;
@@ -32,8 +41,20 @@ class reverse_linkedList {
             next = current.next;
             current.next = temp;
             temp = current;
-            current = next;
+            current = next;   
         }
         return temp;
+    }
+    public static void main(String[] args) {
+        LinkedList ll = new LinkedList(1);
+        ll.insert(2);
+        ll.add(ll, 3);
+        ll.add(ll, 4);
+        ll.add(ll, 5);
+        ll.add(ll, 6);
+        ll.print();
+        Solution s1 = new Solution();
+        ll = s1.reverseList(ll);
+        ll.print();
     }
 }
