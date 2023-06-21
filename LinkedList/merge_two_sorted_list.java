@@ -3,7 +3,9 @@
       int val;
       ListNode next;
       ListNode() {}
-      ListNode(int val) { this.val = val;this.next = null; }
+      ListNode(int val) { 
+        this.val = val;
+        this.next = null; }
       ListNode(int val, ListNode next) { this.val = val; this.next = next; }
   }
 
@@ -12,6 +14,7 @@ class Solution {
 
         while(list != null){
             System.out.printf("%d ",list.val);
+            list = list.next;
         }
          System.out.print("\n");
     }
@@ -78,9 +81,9 @@ class Solution {
         l1.next.next = new ListNode(3);
         l1.next.next.next = new ListNode(4);
         l1.next.next.next.next = new ListNode(5);
-        ListNode l2 = new ListNode(4);
-        l2.next = new ListNode(5);
-        l2.next.next = new ListNode(7);
+        ListNode l2 = new ListNode(6);
+        l2.next = new ListNode(7);
+        l2.next.next = new ListNode(8);
         Solution s1 = new Solution();
         ListNode l3 = s1.mergeTwoLists(l1,l2);
         s1.printList(l3);
